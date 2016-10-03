@@ -1,7 +1,5 @@
 # Ansible Role: Simple PHP-XDebug role for Ubuntu
 
-[![Build Status](https://travis-ci.org/MaximeThoonsen/ansible-role-php-xdebug.svg?branch=master)](https://travis-ci.org/MaximeThoonsen/ansible-role-php-xdebug)
-
 Installs PHP [XDebug](http://xdebug.org/) on Ubuntu Xenial(16.04) Trusty(14.04).
 
 ## Requirements
