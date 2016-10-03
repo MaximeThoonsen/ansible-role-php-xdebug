@@ -1,6 +1,9 @@
 ---
+### Install for Ubuntu Trusty
+
 - name: php5 - install xdebug
   apt: pkg=php5-xdebug state=latest update_cache=yes
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'trusty'
 
 - name: Copy xdebug INI into mods-available folder.
   template: >
@@ -9,9 +12,15 @@
     owner=root group=root mode=644
   when: ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'trusty'
 
-- name: Copy xdebug INI into conf.d folder.
+### Install for Ubuntu Xenial
+
+- name: php7 - install xdebug
+  apt: pkg=php-xdebug state=latest update_cache=yes
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'xenial'
+
+- name: Copy xdebug INI into mods-available folder.
   template: >
     src=xdebug.ini.j2
-    dest=/etc/php5/conf.d/xdebug.ini
+    dest=/etc/php/7.0/mods-available/xdebug.ini
     owner=root group=root mode=644
-  when: ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'precise'
+  when: ansible_distribution == 'Ubuntu' and ansible_distribution_release == 'xenial'
