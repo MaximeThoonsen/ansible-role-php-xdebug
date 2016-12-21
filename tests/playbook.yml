@@ -1,0 +1,14 @@
+
+- name: install python
+  hosts: all
+  become: true
+  gather_facts: false
+  tasks:
+    - name: Install python2.7
+      raw: apt-get install -qq python2.7
+
+- name: install xdebug
+  hosts: all
+  become: true
+  roles:
+    - ../../ansible-role-php-xdebug
