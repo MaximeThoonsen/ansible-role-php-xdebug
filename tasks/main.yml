@@ -5,5 +5,6 @@
 - name: Copy xdebug INI into mods-available folder.
   template: >
     src=xdebug.ini.j2
-    dest=/etc/php/7.0/mods-available/xdebug.ini
+    dest={{ item }}
     owner=root group=root mode=644
+  with_items: "{{'/etc/php/*/mods-available/xdebug.ini' | fileglob}}"
