@@ -6,3 +6,6 @@ php_xdebug_remote_port: "9000"
 php_xdebug_remote_log: /tmp/xdebug.log
 php_xdebug_idekey: XDEBUG
 php_max_nesting_level: 200
+php_xdebug_var_display_max_depth: 3
+php_xdebug_var_display_max_children: 128
+php_xdebug_var_display_max_data: 512
